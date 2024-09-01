@@ -1,0 +1,96 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    background-color: #282c34;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+.container {
+    max-width: 600px;
+    padding: 20px;
+}
+
+.greeting {
+    font-size: 3em;
+    animation: glow 1.5s infinite alternate;
+}
+
+.description {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+#celebrateButton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.1em;
+    background-color: #ff5733;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#celebrateButton:hover {
+    background-color: #c13b00;
+}
+
+#confetti {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #ff5733, 0 0 20px #ff5733, 0 0 30px #ff5733;
+    }
+    to {
+        text-shadow: 0 0 20px #ff5733, 0 0 30px #ff5733, 0 0 40px #ff5733;
+    }
+}
+
+.confetti-piece {
+    position: absolute;
+    width: 10px;
+    height: 20px;
+    opacity: 0.7;
+    animation: fall linear forwards;
+    transform-origin: bottom;
+    transform: rotateZ(45deg);
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100vh) rotateZ(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotateZ(720deg);
+        opacity: 0;
+    }
+}
+
+.countdown {
+    margin-top: 20px;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+#time {
+    font-size: 2em;
+    margin-top: 10px;
+    color: #ff5733;
+}
